@@ -1,16 +1,16 @@
-// Homework 1 - Zuccolo giada - matr. 2055702
+// Computer Vision Homework 1 LAB 2 - Zuccolo Giada - matr. 2055702
 /*
     WHAT THIS CODE DO?
-    1. input of image called "images/original/original.png"
+    1. input of image called "images/original/original_histogram.jpg"
     ------ HISTOGRAM EQUALIZATION PART ------
     2. save in a image the histogram of this image
     3. save in a image the histogram equalized color image
     4. save the relative histogram of this equalized image (not necessary, only to see the obviusly different)
     5. save in a image the histogram equalized grayscale image
-    
+
     ------ FILTER PART ------
-    6. Insert values of all filter
-        6.1.    Insert value for bilateral filtering -- RANGE 
+    6. Insert values of all filter on an image called "images/original/original_filter.jpg"
+        6.1.    Insert value for bilateral filtering -- RANGE
         6.2.    Insert value for bilateral filtering -- SPACE
         6.2.    Insert value for gaussian blur -- kernel
         6.2.    Insert value for gaussian blur -- sigma
@@ -127,7 +127,7 @@ int main(int argc, char** argv)
     cv::merge(luminance, tmp_img);
     cv::cvtColor(tmp_img, image_lum, 56);
     imwrite("images/histogram_equalized/hist_equalized_luminance_color_image.jpg", image_lum);
-
+    computeHist(image_lum, "images/histogram_equalized/equalized_luminance_color_image_hist.jpg");
     // ------------- Histogram Equalization of a Grayscale Image ------------- 
     /*
         The first step is to convert the loaded BGR image to a grayscale image throught the cvtColor() function.
